@@ -24,6 +24,9 @@ math
 -- dataset_load.py (load the dataset and handle exceptions and related issues)   
 -- display.py (class to generate visualizations and suggest changes in usage patterns)  
 -- tests.py (all PyTest testing)
+-- data (contains all csv files with data from various appliances)  
+-- -- all the data files will be contained here
+-- README.md (documentation)
 
 ## How to Run the Program
 
