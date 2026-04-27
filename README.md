@@ -10,10 +10,11 @@
    The program will use publicly available datasets, such as those from the EIA, to analyze general usage trends, with smart meter and appliance-level household electricity data providing more specific user information to load, process, and analyze energy usage. It will generate visualizations to illustrate consumption trends and highlight key findings, and present simple recommendations to users about changes in electricity usage habits that could be made to increase energy efficiency. The program should be simple for the user and easy to interact with, and provide clear and concise output. The project demonstrates how data analysis and Python programming can enhance understanding and improvement of household energy efficiency.   
 
 ## Dependencies:
-pandas
-numpy
-os
-math
+pandas  
+numpy  
+pytest  
+os  
+math  
 
 ## File Structure
 
@@ -22,7 +23,7 @@ math
 -- data_analyzer.py (object that has a list of appliance objects to get a bigger picture of things)  
 -- dataset_load.py (load the dataset and handle exceptions and related issues)   
 -- display.py (class to generate visualizations and suggest changes in usage patterns)  
--- tests.py (all testing)
+-- tests.py (all PyTest testing)
 
 ## How to Run the Program
 
