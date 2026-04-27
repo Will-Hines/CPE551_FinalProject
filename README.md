@@ -30,7 +30,7 @@ math
 
 ## How to Run the Program
 
-## Main Contributions of Each Team Member
-### Danielle
-### Will
-### Jason
+## Main Contributions of Each Team Member  
+### Danielle: Wrote the main file and handled the writing of all tests  
+### Will: Wrote data_analyzer  
+### Jason Wrote appliance.py  
