@@ -9,8 +9,6 @@ class Appliance:
         energy (pandas dataframe): List containing all time series energy usage data points 
         peak_usage: The maximum power value in the energy dataframe 
         average_usage: The average (mean) power value in the energy dataframe 
-    Methods: 
-
     """
 
     def __init__ (self, name, energy): 
@@ -50,5 +48,13 @@ class Appliance:
         if attr == "average_usage": # if the average_usage attribute is requested 
             return self.energy["power"].mean() # return the mean value of the power column 
         raise AttributeError(f"Error: No attribute with given name '{attr}' found.") # default case, if the attribute is not valid, raise a relevant AttributeError 
+    
+    def get_total_energy (self): 
+        """
+        Method to calculate and return the total energy usage of the Appliance from the energy dataframe. 
+
+        Returns: (float): Total energy usage over the measurement period for the given appliance (in J). 
+        """
+        return self.energy["power"].size() * self.average_usage # returns the average power usage multiplied by the number of seconds (data points) to get energy in J 
     
     
