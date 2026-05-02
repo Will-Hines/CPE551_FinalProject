@@ -28,4 +28,16 @@ class Appliance:
         """
         return f"The {self.name} appliance " 
     
+    def __getattr__ (self, attr): 
+        """
+        Method to get attributes from the Appliance object. 
+
+        Overrided to dynamically calculate data metrics when a dynamic attribute is referenced. 
+
+        Parameters: attr (string): the attribute to be referenced 
+
+        Returns: The value of the requested attribute. 
+        """
+        raise AttributeError(f"Error: No attribute with given name '{attr}' found.") # default case, if the attribute is not valid, raise a relevant AttributeError 
+    
     
