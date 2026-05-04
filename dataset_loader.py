@@ -14,7 +14,7 @@ def get_file_names():
     """
     folder_path = Path('./data')       # checks the data folder for appliance csv data files
 
-    file_names = [f.name for f in folder_path.iterdir() if f.is_file() and f.suffix == '.csv']      # Use Comprehension to put all existing csv files into a list
+    file_names = [f for f in folder_path.iterdir() if f.is_file() and f.suffix == '.csv']      # Use Comprehension to put all existing csv files into a list
 
     return file_names
 
@@ -61,7 +61,7 @@ def create_appliance_objects(file_names):
     
     return appliance_dict
 
-if __name__ == "main":          # Testing stuff to make sure the file functions properly
+if __name__ == "__main__":          # Testing stuff to make sure the file functions properly
     file_names = get_file_names()
     print(f"Files in /data: {file_names}")
     print(f"Final appliance dictionary: {create_appliance_objects(file_names)}")
