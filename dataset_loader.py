@@ -61,7 +61,7 @@ def create_appliance_objects(file_names):
     
     return appliance_dict
 
-if __name__ == "main":
+if __name__ == "main":          # Testing stuff to make sure the file functions properly
     file_names = get_file_names()
     print(f"Files in /data: {file_names}")
     print(f"Final appliance dictionary: {create_appliance_objects(file_names)}")
