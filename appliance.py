@@ -31,7 +31,7 @@ class Appliance:
         """
         Method to return a string representation of the Appliance object containing its name (type) and basic energy usage data. 
         """
-        return f"The {self.name} appliance uses {self.average_usage} W of power on average." # return an f-string containing the appliance name and basic usage data 
+        return f"The {self.name} appliance uses {self.average_usage} W of power on average and {self.peak_usage} W maximum." # return an f-string containing the appliance name and basic usage data 
     
     def __getattr__ (self, attr): 
         """
