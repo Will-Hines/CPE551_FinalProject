@@ -3,6 +3,19 @@ Modeule to load the dataset as a pandas dataframe
 """
 
 import pandas as pd
+from pathlib import Path
+
+def get_file_names():
+    """
+    Gets all the file names of all csv files in the /data directory
+
+    Returns: a list containing the names of all files within the /data directory
+    """
+    folder_path = Path('./data')       # checks the data folder for appliance csv data files
+
+    file_names = [f.name for f in folder_path.iterdir() if f.is_file() and f.suffix == '.csv']      # Use Comprehension to put all existing csv files into a list
+    
+    return file_names
 
 def load_data(file_path : str):
     """
