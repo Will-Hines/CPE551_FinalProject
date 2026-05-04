@@ -39,3 +39,20 @@ def get_rms_power(appliance):
     rms_power = math.sqrt(mean_squares)     # final calculation: get the RMS power usage
 
     return rms_power
+
+def get_energy_cost(appliance):
+    """
+    Calculates the total energy use in kwh as well as the cost (based on US Energy rates) of this energy use
+
+    Paramters: appliance: the appliance object containing the relevant energy data
+
+    Returns: a tuple containing the total energy use in kwh and the cost of that energy in USD
+    """
+
+    data = appliance.energy
+    cost_per_kwh = 0.1765       # Average cost per kwh in the United States
+
+    total_kwh = (data['power'].sum()) / (3600 * 1000)       # take the sum of the power collumn then divide by 1 hour (3600 seconds) and 1000 (to convert from watt-hours to kilowatt-hours)
+    total_cost = total_kwh * cost_per_kwh
+
+    return (total_kwh, total_cost)
