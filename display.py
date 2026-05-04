@@ -28,3 +28,4 @@ def plot_power (appliance):
     plt.title(f"{appliance.name} Power Over Time") 
     plt.xlabel("Time (s)") 
     plt.ylabel("Power (W)") 
+    

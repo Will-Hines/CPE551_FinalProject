@@ -1,11 +1,11 @@
-from appliance import Appliance
+    from appliance import Appliance
 from dataset_loader import load_data
 from display import plot_power, suggest_reduction
 
 def main():
-    # Load example datasets (replace with your actual file paths)
+    # Load example datasets
     try:
-        ac_data = load_data("data/ac.csv")
+        ac_data = load_data("data/air_conditioner.csv")
         fridge_data = load_data("data/fridge.csv")
     except Exception as e:
         print("Error loading data:", e)
