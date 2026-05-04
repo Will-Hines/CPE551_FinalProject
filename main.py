@@ -1,4 +1,4 @@
-    from appliance import Appliance
+from appliance import Appliance
 from dataset_loader import load_data
 from display import plot_power, suggest_reduction
 
