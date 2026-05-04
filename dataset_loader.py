@@ -1,3 +1,7 @@
+"""
+Modeule to load the dataset as a pandas dataframe
+"""
+
 import pandas as pd
 
 def load_data(file_path : str):
@@ -13,16 +17,16 @@ def load_data(file_path : str):
     """
 
     try:
-        data = pd.read_csv(file_path)
+        data = pd.read_csv(file_path)   # read the data from the relevant csv
 
     except FileNotFoundError:
-        print(file_path, " was not found.")
+        print(file_path, " was not found.")     # throw error if the filename doesn't exist
         raise FileNotFoundError
     
     except Exception as e:
-        raise Exception(f"Error loading the data: {e}")
+        raise Exception(f"Error loading the data: {e}")     # throw error if the data loading goes wrong
     
-    required_cols = {"timestamp", "power"}
+    required_cols = {"timestamp", "power"}          # ensure the proper format of the data
     if not required_cols.issubset(data.columns):
         raise ValueError("Dataset missing required columns.")
 
