@@ -42,7 +42,7 @@ class DataAnalyzer:
             total_seconds = len(running_times)          # since the data is collected by the second, counting number of lines gets total running time in second
             total_time = pd.to_timedelta(total_seconds, unit='s')       # convert number of seconds into readable time
 
-            running_times[appliance.name] = total_time    # add the appliance's name and total time to the dictionary
+            appliance_running_times[appliance.name] = total_time    # add the appliance's name and total time to the dictionary
 
         return appliance_running_times
     

@@ -20,7 +20,7 @@ def suggest_reduction (appliances):
     print("Suggestions: ") 
     max_energy = appliances[0] 
     for appliance in appliances: # iterate over the appliances list and find the highest energy usage 
-        if appliance.get_total_energy() > max_energy:
+        if appliance.get_total_energy() > max_energy.get_total_energy():
             max_energy = appliance 
     print("Highest power consumption appliance: ", max_energy) # print out the highest energy usage appliance 
     plot_power(max_energy) # plot the power usage for the highest energy appliance 
