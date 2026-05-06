@@ -29,10 +29,14 @@ math
 -- README.md (documentation)
 
 ## How to Run the Program
+1. Clone this repository into a new directory.
+2. Ensure all listed dependencies are installed on the current working installation of Python running the notebook. 
+3. Ensure all files including the dataset files within the /data directory are present. 
+4. Open and run all cells in the main.ipynb notebook in sequential order. 
 
 ## Main Contributions of Each Team Member  
 ### Danielle
-Wrote the main.ipynb and tests.py files and all test cases 
+Wrote the main.ipynb and test.py files and all test cases 
 ### Will
 Wrote data_analyzer.py and dataset_loader.py 
 ### Jason
