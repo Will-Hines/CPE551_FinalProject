@@ -24,6 +24,8 @@ class Appliance:
         if type(energy) != pd.DataFrame: # check if the initial energy attribute is a dataframe 
             raise TypeError("Error: Appliance energy usage must be a Pandas DataFrame.") # if it is not, raise a relevant TypeError 
         # check for correct columns in the energy dataframe 
+        if not {"timestamp", "power"}.issubset(energy.columns):
+            raise ValueError("Dataset missing required columns.")
         self.name = name # initialize the name attribute 
         self.energy = energy # initialize the energy dataframe 
 

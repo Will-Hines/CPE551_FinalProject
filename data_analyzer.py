@@ -77,7 +77,7 @@ class DataAnalyzer:
         for appliance in self.appliance_list:   # loop through all appliances
             data = appliance.energy
 
-            total_kwh = (data['power'].sum()) / (3600 * 1000)       # take the sum of the power collumn then divide by 1 hour (3600 seconds) and 1000 (to convert from watt-hours to kilowatt-hours)
+            total_kwh = (appliance.get_total_energy()) / (3600 * 1000) # take the total energy (in J) then divide by 1 hour (3600 seconds) and 1000 (to convert from watt-hours to kilowatt-hours)
             total_cost = total_kwh * cost_per_kwh
 
             kwh_and_costs[appliance.name] = (total_kwh, total_cost)
