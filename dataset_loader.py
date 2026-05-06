@@ -51,7 +51,7 @@ def create_appliance_objects(file_names):
     """
     Creates an appliance object for each data file in /data
 
-    Returns: a list of all appliance objects
+    Returns: a dictionary of all appliance objects
     """
     appliance_dict = {}
 
