@@ -1,5 +1,5 @@
 """
-Modeule to load the dataset as a pandas dataframe
+Module to load the dataset as a pandas dataframe. 
 """
 
 import pandas as pd
@@ -8,9 +8,9 @@ from appliance import Appliance
 
 def get_file_names():
     """
-    Gets all the file names of all csv files in the /data directory
+    Gets all the file names of all csv files in the /data directory. 
 
-    Returns: a list containing Path objects for all files within the /data directory
+    Returns: a list containing Path objects for all files within the /data directory. 
     """
     folder_path = Path('./data')       # checks the data folder for appliance csv data files
 
@@ -20,14 +20,14 @@ def get_file_names():
 
 def load_data(file_path : Path):
     """
-    Load the appliance energy data from a csv file
+    Load the appliance energy data from a csv file. 
 
-    Args:
-        file_path (Path): a Path object containing the path to the csv file
+    Parameters:
+        file_path (Path): a Path object containing the path to the csv file. 
 
     Returns:
-        Pandas dataframe with the open csv file within a file handler
-        If it fails, returns nothing
+        Pandas dataframe with the open csv file within a file handler. 
+        If it fails, returns None. 
     """
 
     try:
@@ -65,3 +65,5 @@ if __name__ == "__main__":          # Testing stuff to make sure the file functi
     file_names = get_file_names()
     print(f"Files in /data: {file_names}")
     print(f"Final appliance dictionary: {create_appliance_objects(file_names)}")
+
+    

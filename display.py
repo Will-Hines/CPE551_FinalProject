@@ -24,7 +24,7 @@ def plot_power (appliance):
 
     Parameters: appliance (Appliance): the appliance to plot power usage for. 
     """
-    plt.plot(appliance.energy) 
+    plt.plot(appliance.energy["timestamp"], appliance.energy["power"]) 
     plt.title(f"{appliance.name} Power Over Time") 
     plt.xlabel("Time (s)") 
     plt.ylabel("Power (W)") 
