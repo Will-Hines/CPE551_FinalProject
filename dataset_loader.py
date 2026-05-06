@@ -45,13 +45,16 @@ def load_data(file_path : Path):
     if not required_cols.issubset(data.columns):
         raise ValueError("Dataset missing required columns.")
 
+    data["timestamp"] = pd.to_datetime(data["timestamp"]) # convert timestamp strings to Pandas timestamps 
+
+    print(f"Dataset {file_path.name} loaded successfully.") # print a success message after each data set, as loading can take a while 
     return data
 
 def create_appliance_objects(file_names):
     """
     Creates an appliance object for each data file in /data
 
-    Returns: a dictionary of all appliance objects
+    Returns: a dictinonary of all appliance objects
     """
     appliance_dict = {}
 
@@ -65,6 +68,9 @@ def create_appliance_objects(file_names):
 if __name__ == "__main__":          # Testing stuff to make sure the file functions properly
     file_names = get_file_names()
     print(f"Files in /data: {file_names}")
-    print(f"Final appliance dictionary: {create_appliance_objects(file_names)}")
+    appliance_dict = create_appliance_objects(file_names) 
+    print(f"Final appliance dictionary: {appliance_dict}")
+    import display 
+    display.plot_power(appliance_dict["dryer"])
 
     

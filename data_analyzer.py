@@ -83,3 +83,5 @@ class DataAnalyzer:
             kwh_and_costs[appliance.name] = (total_kwh, total_cost)
 
         return kwh_and_costs
+    
+    

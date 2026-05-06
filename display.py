@@ -18,7 +18,12 @@ def suggest_reduction (appliances):
     if type(appliances) != list: 
         raise TypeError("Error: Input must be a list of Appliance objects.")
     print("Suggestions: ") 
-    energy_list = appliances
+    max_energy = appliances[0] 
+    for appliance in appliances: # iterate over the appliances list and find the highest energy usage 
+        if appliance.get_total_energy() > max_energy:
+            max_energy = appliance 
+    print("Highest power consumption appliance: ", max_energy) # print out the highest energy usage appliance 
+    plot_power(max_energy) # plot the power usage for the highest energy appliance 
 
 def plot_power (appliance): 
     """
@@ -30,10 +35,10 @@ def plot_power (appliance):
     """
     if type(appliance) != Appliance: 
         raise TypeError("Error: Appliance object required to plot data.")
-    if (appliance.energy.size() < 10000): 
+    if (appliance.energy.size < 10000): 
         plt.plot(appliance.energy["timestamp"], appliance.energy["power"]) 
     else: 
-        resampled = appliance.energy.resample("30min") 
+        resampled = appliance.energy.groupby() 
         plt.plot(resampled["timestamp"], resampled["power"]) 
     plt.title(f"{appliance.name} Power Over Time") 
     plt.xlabel("Time (s)") 
