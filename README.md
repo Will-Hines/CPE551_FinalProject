@@ -32,8 +32,8 @@ math
 
 ## Main Contributions of Each Team Member  
 ### Danielle
-Wrote the main file and handled the writing of all tests  
+Wrote the main.ipynb and tests.py files and all test cases 
 ### Will
-Wrote data_analyzer  
+Wrote data_analyzer.py and dataset_loader.py 
 ### Jason
-Wrote appliance.py  
+Wrote appliance.py and display.py, performed testing and various small fixes to ensure interoperability between files 
