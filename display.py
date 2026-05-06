@@ -24,6 +24,7 @@ def suggest_reduction (appliances):
             max_energy = appliance 
     print("Highest power consumption appliance: ", max_energy) # print out the highest energy usage appliance 
     plot_power(max_energy) # plot the power usage for the highest energy appliance 
+    print(f"Consider using the {max_energy.name} less at the shown peak usage times. ")
 
 def plot_power (appliance): 
     """
@@ -38,9 +39,10 @@ def plot_power (appliance):
     if (appliance.energy.size < 10000): 
         plt.plot(appliance.energy["timestamp"], appliance.energy["power"]) 
     else: 
-        resampled = appliance.energy.groupby() 
+        resampled = appliance.energy.groupby(appliance.energy.index // 3600).mean() 
         plt.plot(resampled["timestamp"], resampled["power"]) 
-    plt.title(f"{appliance.name} Power Over Time") 
+    plt.title(f"Power Over Time ({appliance.name})") 
     plt.xlabel("Time (s)") 
     plt.ylabel("Power (W)") 
+    plt.show() 
     
