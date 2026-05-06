@@ -38,8 +38,8 @@ class DataAnalyzer:
 
         for appliance in self.appliance_list:   # loop through all appliances 
             data = appliance.energy    # get the energy data from the energy attribute
-            running_times = data[data['power'] > 5]     # filter out any times where power usage is below the baseline
-            total_seconds = len(running_times)          # since the data is collected by the second, counting number of lines gets total running time in second
+            app_running_times = data[data['power'] > 5]     # filter out any times where power usage is below the baseline
+            total_seconds = len(app_running_times)          # since the data is collected by the second, counting number of lines gets total running time in second
             total_time = pd.to_timedelta(total_seconds, unit='s')       # convert number of seconds into readable time
 
             running_times[appliance.name] = total_time    # add the appliance's name and total time to the dictionary
