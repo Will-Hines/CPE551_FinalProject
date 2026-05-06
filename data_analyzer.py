@@ -34,7 +34,7 @@ class DataAnalyzer:
 
         Returns: a dictionary containing the name of each appliance and the total time the appliance was running
         """
-        appliance_running_times = {}
+        running_times = {}
 
         for appliance in self.appliance_list:   # loop through all appliances 
             data = appliance.energy    # get the energy data from the energy attribute
@@ -42,9 +42,9 @@ class DataAnalyzer:
             total_seconds = len(running_times)          # since the data is collected by the second, counting number of lines gets total running time in second
             total_time = pd.to_timedelta(total_seconds, unit='s')       # convert number of seconds into readable time
 
-            appliance_running_times[appliance.name] = total_time    # add the appliance's name and total time to the dictionary
+            running_times[appliance.name] = total_time    # add the appliance's name and total time to the dictionary
 
-        return appliance_running_times
+        return running_times
     
     def get_rms_power(self):
         """
