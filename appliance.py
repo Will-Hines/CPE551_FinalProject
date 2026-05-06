@@ -57,6 +57,6 @@ class Appliance:
 
         Returns: (float): Total energy usage over the measurement period for the given appliance (in J). 
         """
-        return self.energy["power"].size() * self.average_usage # returns the average power usage multiplied by the number of seconds (data points) to get energy in J 
+        return self.energy["power"].size * self.average_usage # returns the average power usage multiplied by the number of seconds (data points) to get energy in J 
     
     

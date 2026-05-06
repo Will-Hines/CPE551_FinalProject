@@ -15,7 +15,7 @@ def get_file_names():
     pwd_path = Path.cwd()       # Get the present working directory to build the /data directory path
     data_path = pwd_path / "data"       # checks the data folder for appliance csv data files
 
-    file_names = [f for f in folder_path.iterdir() if f.is_file() and f.suffix == '.csv']      # Use Comprehension to put all existing csv files into a list
+    file_names = [f for f in data_path.iterdir() if f.is_file() and f.suffix == '.csv']      # Use Comprehension to put all existing csv files into a list
 
     return file_names
 
