@@ -60,17 +60,19 @@ def create_appliance_objects(file_names):
 
     for path in file_names:
         name = path.stem        # name the appliance after the data file we are loading it from
-        appliance = Appliance(name, load_data(path))        # create the Appliance object with the correct name and use the load_data function to load in the data
-        appliance_dict[name] = appliance            # add the new Appliance object to the dict
+        try: 
+            appliance = Appliance(name, load_data(path))        # create the Appliance object with the correct name and use the load_data function to load in the data
+            appliance_dict[name] = appliance            # add the new Appliance object to the dict
+        except FileNotFoundError: 
+            print(f"Error: {path} not found. Skipping appliance.") 
     
     return appliance_dict
 
 if __name__ == "__main__":          # Testing stuff to make sure the file functions properly
     file_names = get_file_names()
     print(f"Files in /data: {file_names}")
-    appliance_dict = create_appliance_objects(file_names) 
-    print(f"Final appliance dictionary: {appliance_dict}")
+    appliance_dict = create_appliance_objects(file_names) # test loading all data and creating program objects 
+    print(f"Final appliance dictionary: {appliance_dict}") # print the final object dictionary 
     import display 
-    display.plot_power(appliance_dict["dryer"])
+    display.plot_power(appliance_dict["dryer"]) # test rendering a plot for the dryer dataset (example) 
 
-    
