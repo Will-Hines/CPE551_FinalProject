@@ -59,9 +59,13 @@ class DataAnalyzer:
         for appliance in self.appliance_list:   # loop through all appliances
             data = appliance.energy # get the energy data from the energy attribute
 
-            mean_squares = (data['power']**2).mean()    # calculate the mean squares
-            rms_power = math.sqrt(mean_squares)     # final calculation: get the RMS power usage
-            rms_powers[appliance.name] = rms_power  # add the appliance's name and the rms powers to the dictionary
+            try: 
+                mean_squares = (data['power']**2).mean()    # calculate the mean squares
+                rms_power = math.sqrt(mean_squares)     # final calculation: get the RMS power usage
+                rms_powers[appliance.name] = rms_power  # add the appliance's name and the rms powers to the dictionary
+            except ValueError: 
+                print("Error: Negative mean power value.")
+                return None
 
         return rms_powers
     
