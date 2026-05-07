@@ -62,7 +62,7 @@ def create_appliance_objects(file_names):
         name = path.stem        # name the appliance after the data file we are loading it from
         try: 
             appliance = Appliance(name, load_data(path))        # create the Appliance object with the correct name and use the load_data function to load in the data
-            if appliance_dict[name] != appliance: # use the equality check to determine if the appliance does not already exist 
+            if (not name in appliance_dict) or (appliance_dict[name] != appliance): # use the equality check to determine if the appliance does not already exist 
                 appliance_dict[name] = appliance            # add the new Appliance object to the dict
         except FileNotFoundError: 
             print(f"Error: {path} not found. Skipping appliance.") 
