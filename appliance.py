@@ -51,6 +51,14 @@ class Appliance:
             return self.energy["power"].mean() # return the mean value of the power column 
         raise AttributeError(f"Error: No attribute with given name '{attr}' found.") # default case, if the attribute is not valid, raise a relevant AttributeError 
     
+    def __eq__ (self, other): 
+        """
+        Method to overload the equality operator for the Appliance class, checking if appliances have the same name attribute values. 
+        
+        Returns: (bool): Whether the appliances have the same attributes. 
+        """
+        return self.name == other.name and self.energy == other.energy # return the comparison result for the name attributes 
+
     def get_total_energy (self): 
         """
         Method to calculate and return the total energy usage of the Appliance from the energy dataframe. 
