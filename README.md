@@ -21,12 +21,12 @@ math
 -- `main.ipynb` (runs the program + testing)  
 -- `appliance.py` ( Creates the class object to store appliance data and such)  
 -- `data_analyzer.py` (object that has a list of appliance objects to get a bigger picture of things)  
--- `dataset_load.py` (load the dataset and handle exceptions and related issues)   
+-- `dataset_load.py` (load the dataset and handle exceptions and related issues)  
 -- `display.py` (class to generate visualizations and suggest changes in usage patterns)  
--- `tests.py` (all PyTest testing)
--- `README.md` (documentation) 
--- data (contains all csv files with data from various appliances) 
--- -- all dataset (.csv format) files are contained here 
+-- `tests.py` (all PyTest testing)  
+-- `README.md` (documentation)  
+-- data (contains all csv files with data from various appliances)  
+-- -- all dataset (.csv format) files are contained here  
 
 
 ## How to Run the Program
