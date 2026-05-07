@@ -18,26 +18,27 @@ math
 
 ## File Structure
 
--- main.ipynb (runs the program + testing)  
--- appliance.py ( Creates the class object to store appliance data and such)  
--- data_analyzer.py (object that has a list of appliance objects to get a bigger picture of things)  
--- dataset_load.py (load the dataset and handle exceptions and related issues)   
--- display.py (class to generate visualizations and suggest changes in usage patterns)  
--- tests.py (all PyTest testing)
+-- `main.ipynb` (runs the program + testing)  
+-- `appliance.py` ( Creates the class object to store appliance data and such)  
+-- `data_analyzer.py` (object that has a list of appliance objects to get a bigger picture of things)  
+-- `dataset_load.py` (load the dataset and handle exceptions and related issues)   
+-- `display.py` (class to generate visualizations and suggest changes in usage patterns)  
+-- `tests.py` (all PyTest testing)
 -- data (contains all csv files with data from various appliances)  
--- -- all the data files will be contained here
--- README.md (documentation)
+-- -- all dataset (.csv format) files are contained here 
+-- `README.md` (documentation)
 
 ## How to Run the Program
 1. Clone this repository into a new directory.
 2. Ensure all listed dependencies are installed on the current working installation of Python running the notebook. 
-3. Ensure all files including the dataset files within the /data directory are present. 
-4. Open and run all cells in the main.ipynb notebook in sequential order. 
+3. Ensure all files including the dataset files within the `/data` directory are present. 
+4. Open and run all cells in the `main.ipynb` notebook in sequential order.
+5. To verify that Pytest tests are passing, open a terminal to the project working directory and run the command `pytest -v test.py`. 
 
 ## Main Contributions of Each Team Member  
 ### Danielle
-Wrote the main.ipynb and test.py files and all test cases 
+Wrote the `main.ipynb` and `test.py` files and all test cases 
 ### Will
-Wrote data_analyzer.py and dataset_loader.py 
+Wrote `data_analyzer.py` and `dataset_loader.py` 
 ### Jason
-Wrote appliance.py and display.py, performed testing and various small fixes to ensure interoperability between files 
+Wrote `appliance.py` and `display.py`, performed testing and various small fixes to ensure interoperability between files 
