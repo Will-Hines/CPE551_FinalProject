@@ -25,7 +25,7 @@ math
 -- `display.py` (class to generate visualizations and suggest changes in usage patterns)  
 -- `tests.py` (all PyTest testing)  
 -- `README.md` (documentation)  
--- data (contains all csv files with data from various appliances)  
+-- `data` (contains all csv files with data from various appliances)  
 -- -- all dataset (.csv format) files are contained here  
 
 
